@@ -22,7 +22,7 @@ public class OAuthServlet extends HttpServlet {
     private static final long serialVersionUID = -1847238807216447030L;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)  {
-        log.info("11111授权页面被请求了......");
+        log.info("111112222授权页面被请求了......");
 
         try {
             request.setCharacterEncoding("gb2312");
