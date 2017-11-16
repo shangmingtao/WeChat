@@ -24,6 +24,8 @@ public class OAuthServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)  {
         log.info("123授权页面被请求了......");
 
+
+
         try {
             request.setCharacterEncoding("gb2312");
             response.setCharacterEncoding("gb2312");  // 用户同意授权后，能获取到code
