@@ -5,6 +5,15 @@
 <web-app>
   <display-name>WeChat Application</display-name>
 
+  <servlet>
+    <servlet-name>aaa</servlet-name>
+    <servlet-class>cn.milo.wechat.AccessToken.AccessToken</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>aaa</servlet-name>
+    <url-pattern>/a.do</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>WechatServlet</servlet-name>
@@ -14,6 +23,38 @@
     <servlet-name>WechatServlet</servlet-name>
     <url-pattern>/tokenCheck</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MenuServlet</servlet-name>
+    <servlet-class>cn.milo.wechat.Menu.MenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuServlet</servlet-name>
+    <url-pattern>/menuCheck</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>oauthServlet</servlet-name>
+    <servlet-class>
+      cn.milo.wechat.Auth.OAuthServlet
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>oauthServlet</servlet-name>
+    <url-pattern>/oauthServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>templateServlet</servlet-name>
+    <servlet-class>
+      cn.milo.wechat.SendTemplate.Template
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>templateServlet</servlet-name>
+    <url-pattern>/templateServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 
 
