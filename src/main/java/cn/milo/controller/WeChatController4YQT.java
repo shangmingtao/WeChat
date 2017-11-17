@@ -31,7 +31,7 @@ public class WeChatController4YQT {
     /*
     创建menu
      */
-    @RequestMapping(value = "/menuCheck")
+    @RequestMapping(value = "/createMenu")
     public void menuCreate(HttpServletRequest request, HttpServletResponse response){
         JSONObject requestJSON = JSONObject.fromObject(HttpUtil.getJsonFromRequest(request));
         try {
@@ -44,7 +44,7 @@ public class WeChatController4YQT {
     /*
     创建menu
      */
-    @RequestMapping(value = "/templateServlet")
+    @RequestMapping(value = "/Sendtemplate")
     public void sendTemplate(HttpServletRequest request, HttpServletResponse response){
         JSONObject requestJSON = JSONObject.fromObject(HttpUtil.getJsonFromRequest(request));
         try {

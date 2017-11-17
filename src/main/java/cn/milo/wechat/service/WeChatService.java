@@ -53,7 +53,7 @@ public class WeChatService {
     创建菜单
      */
     public void createMenu(JSONObject requestJSON) throws Exception {
-        String url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token="+ WeChatAccessTokenTimer.accessToken;
+        String url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token="+ WeChatAccessTokenThreadInit.accessToken;
         WeChatHTTPUtil.requestWeChatByPost(url ,  requestJSON , "Create Menu");
     }
 
@@ -61,7 +61,7 @@ public class WeChatService {
     发送模板消息
      */
     public void sendTemplateMessage(JSONObject requestJSON) throws Exception {
-        String url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token="+ WeChatAccessTokenTimer.accessToken;
+        String url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token="+ WeChatAccessTokenThreadInit.accessToken;
         WeChatHTTPUtil.requestWeChatByPost(url ,  requestJSON , "Send TemplateMessage");
     }
 

@@ -29,7 +29,7 @@ public class WeChatHTTPUtil {
             log.info("[WeChat] ERROR : Request WeChat (HTTP.GET) Exception , Operation = " + logDescription + " , e = " + e.getMessage());
             return null;
         }
-        if(responseSTR != null){
+        if(responseSTR == null){
             log.info("[WeChat] ERROR : Request WeChat (HTTP.GET) , Operation = " + logDescription + " , reponse null");
             return null;
         }
@@ -54,13 +54,13 @@ public class WeChatHTTPUtil {
             log.info("[WeChat] ERROR : Request WeChat (HTTP.POST) Exception , Operation = " + logDescription + " , e = " + e.getMessage());
             return null;
         }
-        if(responseSTR != null){
+        if(responseSTR == null){
             log.info("[WeChat] ERROR : Request WeChat (HTTP.POST) , Operation = " + logDescription + " , reponse null");
             return null;
         }
         responseJSON = JSONObject.fromObject(responseSTR);
-        if (!StringUtil.isEmpty(responseJSON.optString("errcode"))){
-            log.info("[WeChat] ERROR : Request WeChat (HTTP.POST) , Operation = " + logDescription + " , have errcode , errorce = " + responseJSON.optString("errcode"));
+        if (responseJSON.optInt("errcode") != 0){
+            log.info("[WeChat] ERROR : Request WeChat (HTTP.POST) , Operation = " + logDescription + " , have errcode , errorce = " + responseJSON.optInt("errcode"));
             return null;
         }
         return responseJSON;

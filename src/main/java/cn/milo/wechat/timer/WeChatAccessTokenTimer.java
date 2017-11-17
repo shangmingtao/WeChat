@@ -1,25 +1,26 @@
 package cn.milo.wechat.timer;
 
 import cn.milo.util.PropertyFactory;
+import cn.milo.wechat.service.WeChatAccessTokenThreadInit;
+import cn.milo.wechat.service.WeChatService;
 import cn.milo.wechat.util.WeChatHTTPUtil;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
 
 
-public class WeChatAccessTokenTimer {
+public class WeChatAccessTokenTimer implements Runnable{
 
     Logger log = Logger.getLogger(WeChatAccessTokenTimer.class);
 
-    public static String accessToken = "";
-
-    private void refreshAccessToken(){
+    @Override
+    public void run(){
 
         while(true){
 
             String APPID = PropertyFactory.getProperty("WECHAT.APPID");
             String SECRET = PropertyFactory.getProperty("WECHAT.SECRET");
 
-            String url = "https://api.weixin.qq.com/cgi-bin/tokencheck?grant_type=client_credential&appid="+APPID+"&secret="+SECRET+"";
+            String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+APPID+"&secret="+SECRET;
 
             JSONObject responseJSON = WeChatHTTPUtil.requestWeChatByGet(url , "refreshAccessToken");
 
@@ -33,16 +34,15 @@ public class WeChatAccessTokenTimer {
                 continue;
             }else{
                 //如果成功,根据微信返回的过期时间重新获取
-                accessToken = responseJSON.optString("access_token");
+                WeChatAccessTokenThreadInit.accessToken = responseJSON.optString("access_token");
                 try {
-                    Thread.currentThread().sleep(responseJSON.optInt("expires_in"));
+                    Thread.currentThread().sleep(responseJSON.optInt("expires_in")*1000);
                 } catch (InterruptedException e) {
                     log.info("ERROR : thread sleep Exception , e = " + e.getMessage());
                 }
             }
         }
     }
-
 
 
 
