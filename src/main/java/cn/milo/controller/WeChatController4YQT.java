@@ -53,4 +53,13 @@ public class WeChatController4YQT {
             log.info("Send Template Exception , e = " + e.getMessage());
         }
     }
+
+    /*
+    test
+     */
+    @RequestMapping(value = "/a")
+    public void a(HttpServletRequest request, HttpServletResponse response){
+        String openId = request.getParameter("openid");
+        log.info("openid = " + openId);
+    }
 }

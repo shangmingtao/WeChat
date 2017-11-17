@@ -51,6 +51,8 @@ public class WeChatController4WX {
 	/*
 	用户授权
 	 */
+
+	//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5a0ee712e5bc6d1f&redirect_uri=http%3a%2f%2fwechat.yunqt.net%2fWeChat%2foauthServlet&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
 	@RequestMapping(value = "/oauthServlet" , method = RequestMethod.GET)
 	public void OAuth2(HttpServletRequest request, HttpServletResponse response){
 		String code = request.getParameter("code");

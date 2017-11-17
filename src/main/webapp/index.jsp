@@ -20,10 +20,14 @@
     String  openId = (String)request.getAttribute("openId");
     if(null != openId ){
 %>
+<form method="post" action="/a">
+    <input type="hidden" name="openid" value="<%=openId%>"><input>
 <table width="100%" cellspacing="0" cellpadding="0">
     <tr><td width="20%"> Ù–‘</td><td width="80%">÷µ</td></tr>
     <tr><td>OpenID</td><td><%=openId%></td></tr>
 </table>
+    <input type="submit">
+</form>
 <%
     }
     else
