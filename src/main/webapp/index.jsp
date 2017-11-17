@@ -2,6 +2,11 @@
 <%--
 <%@ page import="org.liufeng.course.pojo.SNSUserInfo;"%>
 --%>
+
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort()+ path + "/";
+%>
 <html>
 <head>
     <title>OAuth2.0ÍøÒ³ÊÚÈ¨</title>
@@ -20,7 +25,7 @@
     String  openId = (String)request.getAttribute("openId");
     if(null != openId ){
 %>
-<form method="post" action="/a">
+<form method="post" action="<%=basePath%>a">
     <input type="hidden" name="openid" value="<%=openId%>"><input>
 <table width="100%" cellspacing="0" cellpadding="0">
     <tr><td width="20%">ÊôÐÔ</td><td width="80%">Öµ</td></tr>
