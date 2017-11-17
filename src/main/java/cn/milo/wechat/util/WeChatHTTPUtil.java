@@ -49,7 +49,7 @@ public class WeChatHTTPUtil {
         try {
             log.info("[WeChat] ====> Request WeChat (HTTP.POST) , Operation = " + logDescription + " , url = " + url + " , requestBody = " + requestJSON.toString());
             responseSTR = HttpUtil.doPost(url,requestJSON.toString());
-            log.info("[WeChat] <==== Response WeChat (HTTP.POST) , Operation = " + logDescription + " , Response =  = " + responseSTR);
+            log.info("[WeChat] <==== Response WeChat (HTTP.POST) , Operation = " + logDescription + " , Response = " + responseSTR);
         } catch (Exception e) {
             log.info("[WeChat] ERROR : Request WeChat (HTTP.POST) Exception , Operation = " + logDescription + " , e = " + e.getMessage());
             return null;
