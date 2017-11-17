@@ -1,11 +1,9 @@
-package cn.milo.wechat;
+package cn.milo.wechat.util;
 
 import cn.milo.util.HttpUtil;
 import cn.milo.util.StringUtil;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
-
-import java.io.IOException;
 
 /******************************************************
  ****** @ClassName   : WeChatHTTPUtil.java                                            

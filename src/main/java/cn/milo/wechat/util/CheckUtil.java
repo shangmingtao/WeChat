@@ -1,4 +1,4 @@
-package cn.milo.wechat;
+package cn.milo.wechat.util;
 
 import cn.milo.util.PropertyFactory;
 

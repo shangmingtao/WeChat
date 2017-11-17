@@ -1,4 +1,4 @@
-package cn.milo.wechat;
+package cn.milo.wechat.entity;
 
 /**
  * Created by admin on 2017/11/16.

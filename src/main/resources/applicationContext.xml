@@ -22,6 +22,6 @@
 	</context:component-scan>
 
 	<!-- 加载所有兄弟服务器 -->
-	<bean id="ServerToolsInit" class="cn.milo.wechat.WeChatAccessTokenTimer" init-method="refreshAccessToken"/>
+	<bean id="ServerToolsInit" class="cn.milo.wechat.timer.WeChatAccessTokenTimer" init-method="refreshAccessToken"/>
 
 </beans>

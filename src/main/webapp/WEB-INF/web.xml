@@ -1,8 +1,11 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
   <display-name>WeChat Application</display-name>
 
   <servlet>
@@ -29,56 +32,6 @@
 
   <!-- jianting -->
   <listener><listener-class>org.springframework.web.context.ContextLoaderListener</listener-class></listener>
-
-  <servlet>
-    <servlet-name>aaa</servlet-name>
-    <servlet-class>cn.milo.wechat.AccessToken.AccessToken</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>aaa</servlet-name>
-    <url-pattern>/a.do</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>WechatServlet</servlet-name>
-    <servlet-class>cn.milo.wechat.token.TokenCheckServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>WechatServlet</servlet-name>
-    <url-pattern>/tokenCheck</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>MenuServlet</servlet-name>
-    <servlet-class>cn.milo.wechat.Menu.MenuServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MenuServlet</servlet-name>
-    <url-pattern>/menuCheck</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>oauthServlet</servlet-name>
-    <servlet-class>
-      cn.milo.wechat.Auth.OAuthServlet
-    </servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>oauthServlet</servlet-name>
-    <url-pattern>/oauthServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>templateServlet</servlet-name>
-    <servlet-class>
-      cn.milo.wechat.SendTemplate.Template
-    </servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>templateServlet</servlet-name>
-    <url-pattern>/templateServlet</url-pattern>
-  </servlet-mapping>
 
 </web-app>
 

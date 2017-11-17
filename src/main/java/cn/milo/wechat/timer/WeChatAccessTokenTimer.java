@@ -1,14 +1,9 @@
-package cn.milo.wechat;
+package cn.milo.wechat.timer;
 
-import cn.milo.util.HttpUtil;
 import cn.milo.util.PropertyFactory;
-import cn.milo.util.StringUtil;
-import cn.milo.wechat.AccessToken.AccessToken;
-import cn.milo.wechat.token.TokenCheckServlet;
+import cn.milo.wechat.util.WeChatHTTPUtil;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;
-
-import java.io.IOException;
 
 
 public class WeChatAccessTokenTimer {
@@ -24,7 +19,7 @@ public class WeChatAccessTokenTimer {
             String APPID = PropertyFactory.getProperty("WECHAT.APPID");
             String SECRET = PropertyFactory.getProperty("WECHAT.SECRET");
 
-            String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+APPID+"&secret="+SECRET+"";
+            String url = "https://api.weixin.qq.com/cgi-bin/tokencheck?grant_type=client_credential&appid="+APPID+"&secret="+SECRET+"";
 
             JSONObject responseJSON = WeChatHTTPUtil.requestWeChatByGet(url , "refreshAccessToken");
 
