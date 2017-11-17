@@ -1,6 +1,6 @@
 package cn.milo.wechat.token;
 
-import cn.milo.wechat.util.CheckUtil;
+import cn.milo.wechat.CheckUtil;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;

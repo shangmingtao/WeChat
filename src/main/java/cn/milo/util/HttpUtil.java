@@ -112,7 +112,7 @@ public class HttpUtil {
 	 * @param url
 	 * @return OutputStream
 	 */
-	public static String doGet(String url) throws IOException {
+	public static String doGet(String url) throws Exception {
 		String responseText = null;
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpget = new HttpGet(url);

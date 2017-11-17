@@ -1,7 +1,7 @@
 package cn.milo.wechat.util;
 
 import cn.milo.util.HttpUtil;
-import cn.milo.wechat.entity.WeixinOauth2Token;
+import cn.milo.wechat.WeixinOauth2Token;
 import cn.milo.wechat.token.TokenCheckServlet;
 import net.sf.json.JSONObject;
 import org.apache.log4j.Logger;

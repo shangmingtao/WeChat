@@ -9,26 +9,50 @@
   <name>wechat-core Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <org.springframework.version>3.1.1.RELEASE</org.springframework.version>
+  </properties>
+
   <dependencies>
+    <!-- spring -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+
     <!-- servlet -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
-      <scope>provided</scope>
     </dependency>
+
     <!-- log4j -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
+
     <!-- json -->
     <dependency>
       <groupId>net.sf.json-lib</groupId>
@@ -36,12 +60,14 @@
       <version>2.2.3</version>
       <classifier>jdk15</classifier>
     </dependency>
+
     <!-- http -->
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
       <version>4.5</version>
     </dependency>
+
   </dependencies>
 
   <build>

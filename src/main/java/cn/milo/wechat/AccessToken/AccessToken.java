@@ -26,7 +26,7 @@ public class AccessToken extends HttpServlet {
     {
         try {
             AccessToken = JSONObject.fromObject(HttpUtil.doGet("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+appID+"&secret="+appsecret+"")).optString("access_token");
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

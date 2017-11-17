@@ -1,16 +1,14 @@
 package cn.milo.wechat.Auth;
 
 import cn.milo.wechat.AccessToken.AccessToken;
-import cn.milo.wechat.entity.WeixinOauth2Token;
+import cn.milo.wechat.WeixinOauth2Token;
 import cn.milo.wechat.token.TokenCheckServlet;
 import cn.milo.wechat.util.AdvancedUtil;
 import org.apache.log4j.Logger;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * Created by admin on 2017/11/16.
